@@ -7,9 +7,15 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="testBean"
-          class="org.springlesson1.TestBean">
-        <constructor-arg value="Boris"/>
+    <bean id="musicBean"
+          class="org.springlesson1.ClassicalMusic">
+    </bean>
+
+    <bean id="musicPlayer"
+          class="org.springlesson1.MusicPlayer">
+        <property name="music" ref="musicBean" />
+        <property name="name" value="Some name" />
+        <property name="volume" value="50"/>
     </bean>
 
 </beans>
